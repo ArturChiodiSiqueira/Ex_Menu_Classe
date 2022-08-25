@@ -6,8 +6,8 @@ namespace Ex_Menu_Classe
     {
         static void Main(string[] args)
         {
-            Pessoa[] contatos = new Pessoa[10];
-            int opcao;
+            Pessoa[] contatos = new Pessoa[3];
+            int opcao, quantidade = 0;
 
             do
             {
@@ -22,11 +22,19 @@ namespace Ex_Menu_Classe
                         break;
 
                     case 1:
-                        contatos[0] = lerPessoa();
+                        if (quantidade != contatos.Length)
+                        {
+                            contatos[quantidade] = lerPessoa();
+                            quantidade++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nLIMITE MAXIMO DE CADASTROS\n");
+                        }
                         break;
 
                     case 2:
-                        imprimirContatos(contatos);
+                        imprimirContatos(contatos, quantidade);
                         break;
                 }
 
@@ -62,11 +70,13 @@ namespace Ex_Menu_Classe
             //return pessoa;
         }
 
-        static void imprimirContatos(Pessoa[] contatos)
+        static void imprimirContatos(Pessoa[] contatos, int quantidade)
         {
             Console.Clear();
             Console.WriteLine(">>>> CONTATOS <<<<");
-            Console.WriteLine("Nome: " + contatos[0].Nome + "\nIdade: " + contatos[0].Idade);
+
+            for (int i = 0; i < quantidade; i++)
+                Console.WriteLine("Nome: " + contatos[i].Nome + "\nIdade: " + contatos[i].Idade);
         }
     }
 }
