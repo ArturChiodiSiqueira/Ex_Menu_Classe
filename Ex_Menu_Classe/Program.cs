@@ -11,7 +11,7 @@ namespace Ex_Menu_Classe
 
             do
             {
-                Console.WriteLine("1 - CADASTRAR\n2 - Imprimir\n0 - SAIR");
+                Console.WriteLine("1 - CADASTRAR\n2 - IMPRIMIR\n0 - SAIR");
                 Console.Write("Informe a opcao desejada: ");
                 opcao = int.Parse(Console.ReadLine());
 
@@ -66,7 +66,7 @@ namespace Ex_Menu_Classe
         {
             Console.Clear();
             Console.WriteLine(">>>> CONTATOS <<<<");
-            Console.WriteLine(contatos[0]);
+            Console.WriteLine("Nome: " + contatos[0].Nome + "\nIdade: " + contatos[0].Idade);
         }
     }
 }
