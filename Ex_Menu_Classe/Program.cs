@@ -11,7 +11,7 @@ namespace Ex_Menu_Classe
 
             do
             {
-                Console.WriteLine("1 - CADASTRAR\n0 - SAIR");
+                Console.WriteLine("1 - CADASTRAR\n2 - Imprimir\n0 - SAIR");
                 Console.Write("Informe a opcao desejada: ");
                 opcao = int.Parse(Console.ReadLine());
 
@@ -24,11 +24,15 @@ namespace Ex_Menu_Classe
                     case 1:
                         contatos[0] = lerPessoa();
                         break;
+
+                    case 2:
+                        imprimirContatos(contatos);
+                        break;
                 }
 
             } while (opcao != 0);
 
-            Console.WriteLine(">>>>FIM<<<<");
+            Console.WriteLine(">>>> FIM <<<<");
         }
 
         static Pessoa lerPessoa()
@@ -56,6 +60,13 @@ namespace Ex_Menu_Classe
             //    Idade = idade
             //};
             //return pessoa;
+        }
+
+        static void imprimirContatos(Pessoa[] contatos)
+        {
+            Console.Clear();
+            Console.WriteLine(">>>> CONTATOS <<<<");
+            Console.WriteLine(contatos[0]);
         }
     }
 }
